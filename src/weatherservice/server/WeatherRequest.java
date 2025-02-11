@@ -27,10 +27,8 @@ public class WeatherRequest {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null) return false;
-        if (!(o instanceof WeatherRequest weatherRequest)) return false;
-
-        return this.ip.equals(weatherRequest.ip) &&
+        return o instanceof WeatherRequest weatherRequest &&
+                this.ip.equals(weatherRequest.ip) &&
                 this.port == weatherRequest.port &&
                 Arrays.equals(this.messageParts, weatherRequest.messageParts);
     }
