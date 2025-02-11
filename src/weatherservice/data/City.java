@@ -51,9 +51,7 @@ public class City {
      */
     @Override
     public boolean equals(Object o) {
-        if (o == null) return false;
-        if (!(o instanceof City city)) return false;
-
-        return city.name.equals(this.name);
+        return o instanceof City city && city.name.equals(this.name);
+        // null case wird von instance of gecovered!
     }
 }
